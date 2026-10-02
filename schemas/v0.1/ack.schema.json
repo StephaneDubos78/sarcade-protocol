@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ACK",
+  "type": "object",
+  "required": [
+    "id",
+    "message_id",
+    "actor_id",
+    "status",
+    "time"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "message_id": {
+      "type": "string"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "received",
+        "read",
+        "accepted",
+        "rejected"
+      ]
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}
