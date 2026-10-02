@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Membership",
+  "type": "object",
+  "required": [
+    "id",
+    "user_id",
+    "organization_id",
+    "roles",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "organization_id": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "team_id": {
+      "type": "string"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "viewer",
+          "operator",
+          "team_leader",
+          "dispatcher",
+          "event_manager",
+          "organization_admin",
+          "system_admin"
+        ]
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "status": {
+      "enum": [
+        "active",
+        "invited",
+        "suspended",
+        "expired"
+      ]
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}
