@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "User",
+  "description": "Operational profile. Authentication credentials are outside this object.",
+  "type": "object",
+  "required": [
+    "id",
+    "display_name",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "callsign": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "status": {
+      "enum": [
+        "active",
+        "disabled",
+        "temporary"
+      ]
+    },
+    "locale": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+    },
+    "amateur_radio_authorized": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}
