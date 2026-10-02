@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Message",
+  "type": "object",
+  "required": [
+    "id",
+    "event_id",
+    "sender_id",
+    "body",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "sender_id": {
+      "type": "string"
+    },
+    "recipient_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "priority": {
+      "enum": [
+        "routine",
+        "urgent",
+        "immediate"
+      ]
+    },
+    "body": {
+      "type": "string",
+      "maxLength": 2048
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}
