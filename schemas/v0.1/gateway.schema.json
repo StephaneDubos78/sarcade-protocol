@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gateway",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "status": {
+      "enum": [
+        "online",
+        "degraded",
+        "offline",
+        "unknown"
+      ]
+    },
+    "transports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "last_seen": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}
