@@ -1,0 +1,11 @@
+{
+  "id": "msg_01",
+  "event_id": "evt_demo",
+  "sender_id": "user_01",
+  "recipient_ids": [
+    "team_02"
+  ],
+  "priority": "routine",
+  "body": "RAS secteur nord",
+  "created_at": "2026-10-02T00:00:00Z"
+}
