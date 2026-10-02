@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SyncOperation",
+  "type": "object",
+  "required": [
+    "operation_id",
+    "object_id",
+    "object_type",
+    "action",
+    "client_time",
+    "payload"
+  ],
+  "properties": {
+    "operation_id": {
+      "type": "string"
+    },
+    "object_id": {
+      "type": "string"
+    },
+    "object_type": {
+      "enum": [
+        "event",
+        "team",
+        "device",
+        "position",
+        "message",
+        "ack",
+        "poi",
+        "gateway",
+        "user",
+        "organization",
+        "membership"
+      ]
+    },
+    "action": {
+      "enum": [
+        "create",
+        "update",
+        "delete"
+      ]
+    },
+    "client_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "base_version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "payload": {
+      "type": "object"
+    },
+    "retry_count": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    }
+  },
+  "additionalProperties": false
+}
