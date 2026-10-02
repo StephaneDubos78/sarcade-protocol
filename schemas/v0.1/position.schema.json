@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Position",
+  "type": "object",
+  "required": [
+    "id",
+    "event_id",
+    "device_id",
+    "lat",
+    "lon",
+    "time"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "device_id": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "lon": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180
+    },
+    "alt_m": {
+      "type": "number"
+    },
+    "accuracy_m": {
+      "type": "number",
+      "minimum": 0
+    },
+    "heading_deg": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMaximum": 360
+    },
+    "speed_mps": {
+      "type": "number",
+      "minimum": 0
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}
