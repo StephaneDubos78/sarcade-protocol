@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sarcade.org/schema/v0.1/event.schema.json",
+  "title": "Event",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "kind",
+    "status",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "kind": {
+      "enum": [
+        "exercise",
+        "intervention",
+        "race",
+        "event",
+        "other"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "active",
+        "closed",
+        "archived"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}
